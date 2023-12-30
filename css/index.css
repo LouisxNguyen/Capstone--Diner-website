@@ -4,3 +4,184 @@
     padding: 0;
     box-sizing: border-box;
 }
+html,body{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/* ----------- */
+/* HEADER */
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.containerDiner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 20px 0;
+    overflow: hidden;
+}
+.header__right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0 20px;
+}
+.header__logo h1{
+    padding: 0;
+    margin: 0;
+
+}
+.header__logo h1 a{
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+}
+.header__right .header__form{
+    position: relative;
+}
+.header__right .header__form input{
+    padding: 10px 50px 10px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    border: 1px solid white;
+    outline: none;
+}
+.header__right .header__form input:focus{ 
+    outline: none;
+}
+.header__right .header__form i{
+    position: absolute;
+    right: 1.25rem;
+    top: .9375rem;
+    font-size: .9375rem;
+    cursor: pointer;
+}
+.header__menu button{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.95em;
+    padding: 0 8px;
+}.header__menu button a{
+    color: white;
+}
+.header__overlay{
+    z-index: 2;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    transform: scale(0.8);
+    background: rgba(6, 3, 0, 0.77);
+    transition: all .5s ease-in-out;
+}
+.header__overlay.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.header__overlay__menu{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.header__overlay button{
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #FF6600;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: .9375rem;
+    transition: all .5s;
+}
+.header__overlay button:hover{
+    background-color: white;
+    color: #FF6600;
+}
+.header__overlay__menu a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: .5s;
+    padding: 2px 0;
+}
+.header__overlay__menu a:hover{
+    color: #FF6600;
+}
+
+/* CAROUSEL */
+.carousel{
+    background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),
+    url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner1.jpg);
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.carousel__contain{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.carousel__content{
+    max-width: 600px;
+    margin-right: auto;
+}
+.carousel .containerDiner h3{
+    font-size: 3.375rem;
+    font-weight: 600;
+    line-height: 4rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.carousel .containerDiner p{
+    font-size: 1rem;
+    color: white;
+    margin: 1.5rem 0 0;
+    padding-right: 3rem;
+    line-height: 28px;
+}
+.carousel .containerDiner button{
+    padding: 12px 45px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    margin: 48px 8px 0 0;
+    font-weight: 700;
+    line-height: 30px;
+}
+.carousel .containerDiner button i{
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 8px;
+    line-height: 20px;
+    font-weight: 700;
+}
