@@ -11,8 +11,30 @@ html,body{
 a{
     text-decoration: none;
 }
+a:hover{
+    text-decoration: none;
+}
 ul{
     list-style: none;
+}
+.heading{
+    text-align: center;
+}
+.heading h6{
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #FF6600;
+    display: block;
+    margin-bottom: 0;
+}
+.heading h3{
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 /* ----------- */
 /* HEADER */
@@ -71,6 +93,31 @@ header{
     font-size: .9375rem;
     cursor: pointer;
 }
+.header__mode button{
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+}
+.header__mode button .lightmode{
+    display: none;
+}
+.header__mode button .darkmode{
+    display: block;
+}
+
+.dark .header__right .header__form i{
+    color: #404040;
+    position: absolute;
+    right: 1.25rem;
+    top: .9375rem;
+    font-size: .9375rem;
+    cursor: pointer;
+}
+
+/* ----------------------------------- */
 .header__menu button{
     border: none;
     outline: none;
@@ -89,7 +136,9 @@ header{
     overflow-y: scroll;
     top: 0;
     left: 0;
-    transform: scale(0.8);
+    /* Sửa lại scale 0.8 sau khi
+    hoàn thành các phần khác */
+    transform: scale(0);
     background: rgba(6, 3, 0, 0.77);
     transition: all .5s ease-in-out;
 }
@@ -137,7 +186,7 @@ header{
 }
 
 /* CAROUSEL */
-.carousel{
+.carouselDiner{
     background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),
     url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner1.jpg);
     background-repeat: no-repeat;
@@ -154,21 +203,21 @@ header{
     max-width: 600px;
     margin-right: auto;
 }
-.carousel .containerDiner h3{
+.carouselDiner .containerDiner h3{
     font-size: 3.375rem;
     font-weight: 600;
     line-height: 4rem;
     color: white;
     margin-bottom: 1.5rem;
 }
-.carousel .containerDiner p{
+.carouselDiner .containerDiner p{
     font-size: 1rem;
     color: white;
     margin: 1.5rem 0 0;
     padding-right: 3rem;
     line-height: 28px;
 }
-.carousel .containerDiner button{
+.carouselDiner .containerDiner button{
     padding: 12px 45px;
     border: 2px solid white;
     border-radius: 8px;
@@ -177,11 +226,354 @@ header{
     margin: 48px 8px 0 0;
     font-weight: 700;
     line-height: 30px;
+    position: relative;
+    transition: all .5s;
+    z-index: 3;
 }
-.carousel .containerDiner button i{
+.carouselDiner .containerDiner button:hover{
+    color: #FF6600;
+    z-index: 3;
+}
+.carouselDiner .containerDiner button::after{
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .5s;
+}
+.carouselDiner .containerDiner button:hover::after{
+    width: 100%;
+    z-index: -1;
+}
+.carouselDiner .containerDiner button i{
     display: inline-block;
     font-size: 1rem;
     margin-left: 8px;
     line-height: 20px;
     font-weight: 700;
+}
+
+/* WHAT"s NEW */
+.whatnew{
+    padding: 3rem 0;
+}
+.whatnew .containerWhatnew{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.whatnew .whatnew__grid .row{
+    gap: 2rem 0;
+    margin-top: 32px;
+}
+.whatnew .whatnew__grid .whatnew__grid__img img{
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all .5s;
+}
+.whatnew .whatnew__grid .whatnew__grid__img:hover img{
+    opacity: 0.85;
+}
+.whatnew .whatnew__grid .col-4 .whatnew__grid__img{
+    position: relative;
+}
+.whatnew .whatnew__grid .whatnew__grid__img::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.53) 69%, rgba(0, 0, 0, 0.76) 100%);
+}
+.whatnew .whatnew__grid .col-4{
+    position: relative;
+}
+.whatnew__grid__content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 48px 48px 32px 64px;
+    width: 100%;
+}
+.whatnew__grid__content h4{
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 700;
+}
+.whatnew__grid__content span{
+    display: block;
+    font-weight: 600;
+    opacity: 0.9;
+    color: #EDBB07;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-top: 0.5rem;
+}
+/* VIDEO */
+.videoDiner .videoDiner__overlay{
+    background: url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    height: 500px;
+    position: relative;
+}
+.videoDiner .videoDiner__overlay::after{
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+}
+.videoDiner .videoDiner__overlay a{
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 26px;
+    border-radius: 50%;
+    background-color: white;
+    color: #FF6600;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    animation: boxshadowanimation 1s linear 0s infinite;
+    transform: translate(-50%,-50%) scale(1);
+    transition: all .5s ease-in-out;
+}
+@keyframes boxshadowanimation {
+    0%{
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.3),
+                0 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    100%{
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 0 40px rgba(50, 100, 245, 0);
+    }
+}
+.videoDiner .videoDiner__overlay a:hover{
+    background-color: #FF6600;
+    color: white;
+    transform: translate(-50%,-50%) scale(1.3);
+}
+
+#small-dialog iframe{
+    width: 100%;
+    height: 420px;
+    display: block;
+    border-radius: 10px;
+}
+#small-dialog {
+    max-width: 750px;
+    margin: 40px auto;
+    position: relative;
+  }
+.mfp-close-btn-in .mfp-close {
+    color: #fff;
+  }
+  .mfp-close,
+  .mfp-close:active {
+    top: -40px;
+  }
+  .my-mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+  }
+  
+  /* animate in */
+  .my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* animate out */
+  .my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  
+  /* Dark overlay, start state */
+  .my-mfp-zoom-in.mfp-bg {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  /* animate in */
+  .my-mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: 0.95;
+  }
+  
+  /* animate out */
+  .my-mfp-zoom-in.mfp-removing.mfp-bg {
+    opacity: 0;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/* FEEDBACK */
+.feedback{
+    padding: 3rem 0;
+}
+.feedback .owl-carousel{
+    text-align: center;
+}
+.feedback .item .containerFeedback{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 3.25rem;
+    margin-bottom: 1.5rem;
+}
+.feedback .owl-carousel .item{
+    width: 100%;
+}
+.feedback .owl-carousel .item a{
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.feedback .owl-carousel .item i{
+    display: block;
+    font-size: 1.375rem;
+    color: #FF6600;
+}
+.feedback .owl-carousel .item blockquote q{
+    font-size: 1.5rem;
+    line-height: 36px;
+    color: black;
+    font-weight: 600;
+    font-style: italic;
+}
+.feedback .owl-carousel .item p:first-of-type{
+    color: #7A7E88;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0;
+}
+.feedback .owl-carousel .item h3{
+    margin-top: 1.5rem;
+    margin-bottom: .25rem;
+    font-weight: 600;
+    font-size: 20px;
+}
+.feedback .owl-carousel .item p:last-of-type{
+    font-size: 18px;
+    font-style: normal;
+    margin-bottom: 0;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+.owl-theme .owl-dots .owl-dot.active span{
+    background-color: #FF6600;
+}
+.owl-theme .owl-dots .owl-dot:hover span{
+    background-color: #FF6600;
+}
+/* Back2Top */
+
+.back2top{
+    z-index: 50;
+    background-color: #FF6600;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 55px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 18px;
+    line-height: 48px;
+    visibility: hidden; 
+    opacity: 0;
+    transition: all .5s;
+}
+.back2top:hover{
+    background-color: #000000;
+    color: #FF6600;
+}
+.cd-top--is-visible{ 
+    visibility: visible;
+    opacity: 1;
+}
+.cd-top--fade-out{ 
+    opacity: 1;
+}
+
+
+/* Dark theme */
+.dark .header__mode button .lightmode{
+    display: block;
+}
+.dark .header__mode button .darkmode{
+    display: none;
+}
+.dark .header__right .header__form input{
+    padding: 10px 50px 10px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    border: 1px solid #232220;
+    outline: none;
+    background: #232220;
+} 
+.dark .heading h3{
+    color: white;
+}
+.dark .whatnew{
+    background-color: #282828;
+}
+.dark .feedback{
+    background-color: #232220;
+}
+.dark .feedback .owl-carousel .item blockquote q{
+    color: white;
+}
+.dark .feedback .owl-carousel .item h3{
+    margin-top: 1.5rem;
+    margin-bottom: .25rem;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+}
+
+.dark .feedback .owl-carousel .item p:first-of-type{
+    color: #B6C3CC;
+}
+.dark .feedback .owl-carousel .item p:last-of-type{
+    color: #9FAAB1;
+}
+.dark .videoDiner{
+    background-color: #232220;
 }
